@@ -1,0 +1,17 @@
+<project default="jar">
+
+  <target name="compile">
+    <javac srcdir="." classpath="../../../lib/js.jar" />
+  </target>
+
+  <target name="jar" depends="compile">
+    <jar destfile="HelloModule.jar" basedir="." includes="**/*.class" >
+      <manifest>
+        <attribute name="Module-Class"
+            value="HelloModule"/>
+      </manifest>
+    </jar>
+  </target>
+
+</project>
+
